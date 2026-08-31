@@ -4,21 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PN Ecrins - Localisation</title>
-    <script type="module" crossorigin src="./assets/index-DEG1qbWp.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CnqKHfez.css">
+    <script type="module" crossorigin src="./assets/index-B0GBjfTe.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-XLmvyVRq.css">
   </head>
   <body>
     <header id="app-header">
+      <img src="/images/logo.png" alt="" id="app-logo" onerror="this.style.display='none'" />
       <h1>Parc national des Écrins — Localisation</h1>
     </header>
 
     <div id="app">
       <aside id="sidebar">
+        <h3> Informations de localisation </h3>
         <p class="hint">
-          Utilisez l'outil "point" de la barre de dessin (sur la carte) pour
-          obtenir les coordonnées, l'altitude, la commune et les zonages
-          réglementaires d'un endroit. Les outils de dessin et d'import de
-          fichier sont directement sur la carte.
+          Utilisez les outils de dessins sur la carte (point, polygone) pour afficher les informations géographiques de la zone
         </p>
         <div id="info-content"></div>
       </aside>
@@ -26,6 +25,21 @@
       <main id="map-container">
         <div id="map"></div>
       </main>
+    </div>
+
+    <div id="gps-modal" class="modal-overlay">
+      <form id="gps-form" class="modal-box">
+        <h3>Localiser un point GPS</h3>
+        <label for="gps-x">X (longitude)</label>
+        <input type="number" step="any" id="gps-x" required />
+        <label for="gps-y">Y (latitude)</label>
+        <input type="number" step="any" id="gps-y" required />
+        <p id="gps-error" class="modal-error"></p>
+        <div class="modal-actions">
+          <button type="button" id="gps-cancel" class="secondary">Annuler</button>
+          <button type="submit">Afficher</button>
+        </div>
+      </form>
     </div>
 
   </body>

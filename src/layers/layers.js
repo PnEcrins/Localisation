@@ -7,13 +7,18 @@ import L from "../leafletGlobals.js";
  */
 
 function buildWmtsLayer(cfg) {
-  const url =
+  let url =
     `${cfg.url}?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile` +
     `&LAYER=${encodeURIComponent(cfg.layer)}` +
     `&STYLE=${encodeURIComponent(cfg.style || "normal")}` +
     `&TILEMATRIXSET=${encodeURIComponent(cfg.tileMatrixSet || "PM")}` +
     `&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}` +
     `&FORMAT=${encodeURIComponent(cfg.format || "image/png")}`;
+
+  if (cfg.apiKey) {
+    const apiKeyName = cfg.apiKeyName || "apiKey";
+    url += `&${apiKeyName}=${cfg.apiKey}`;
+  }
 
   return L.tileLayer(url, {
     tileSize: cfg.tileSize || 256,

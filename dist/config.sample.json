@@ -34,21 +34,6 @@
 
   "layers": [
     {
-      "id": "ign-scan",
-      "label": "Scan IGN",
-      "type": "wmts",
-      "baseLayer": true,
-      "url": "https://data.geopf.fr/private/wmts",
-      "layer": "GEOGRAPHICALGRIDSYSTEMS.MAPS",
-      "style": "normal",
-      "tileMatrixSet": "PM",
-      "format": "image/jpeg",
-      "attribution": "IGN-F/Geoportail",
-      "enabled": true,
-      "apiKey": "ign_scan_ws",
-      "apiKeyName": "apikey"
-    },
-    {
       "id": "ign-plan",
       "label": "Plan IGN",
       "type": "wmts",
@@ -59,7 +44,7 @@
       "tileMatrixSet": "PM",
       "format": "image/png",
       "attribution": "IGN-F/Geoportail",
-      "enabled": false
+      "enabled": true
     },
     {
       "id": "ign-ortho",
@@ -75,21 +60,6 @@
       "enabled": false
     },
     {
-      "id": "ign-scan-constat",
-      "label": "Scan constant",
-      "type": "wmts",
-      "baseLayer": true,
-      "url": "https://data.geopf.fr/private/wmts",
-      "layer": "GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN25TOUR",
-      "style": "normal",
-      "tileMatrixSet": "PM",
-      "format": "image/jpeg",
-      "attribution": "IGN-F/Geoportail",
-      "enabled": false,
-      "apiKey": "ign_scan_ws",
-      "apiKeyName": "apikey"
-    },
-    {
       "id": "ign-cadastre",
       "label": "Cadastre",
       "type": "wmts",
@@ -101,20 +71,6 @@
       "format": "image/png",
       "attribution": "IGN-F/Geoportail (DGFiP)",
       "enabled": false
-    },
-    {
-      "id": "secteurs",
-      "label": "Secteurs",
-      "type": "geojson",
-      "enabled": false,
-      "url": "https://geonature.ecrins-parcnational.fr/api/geo/areas?type_code=SEC&format=geojson&limit=2000"
-    },
-    {
-      "id": "coeur_pne",
-      "label": "Zone coueur PNE",
-      "type": "geojson",
-      "enabled": true,
-      "url": "https://geonature.ecrins-parcnational.fr/api/geo/areas?type_code=ZC&format=geojson&limit=2000"
     }
   ]
 }
