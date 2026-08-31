@@ -9,15 +9,6 @@ function utmZoneFromLon(lon) {
   return Math.floor((lon + 180) / 6) + 1;
 }
 
-function toDms(deg, isLat) {
-  const dir = deg >= 0 ? (isLat ? "N" : "E") : isLat ? "S" : "W";
-  const abs = Math.abs(deg);
-  const d = Math.floor(abs);
-  const minFloat = (abs - d) * 60;
-  const m = Math.floor(minFloat);
-  const s = ((minFloat - m) * 60).toFixed(2);
-  return `${d}°${m}'${s}"${dir}`;
-}
 
 /**
  * lngLat: [lon, lat] en degrés décimaux (WGS84 / EPSG:4326)
@@ -31,7 +22,6 @@ export function describeCoordinates([lon, lat]) {
 
   return {
     wgs84: { x: lon.toFixed(6), y: lat.toFixed(6) },
-    dms: { x: toDms(lon, false), y: toDms(lat, true) },
     utm: { zone, x: xUtm.toFixed(1), y: yUtm.toFixed(1) },
     lambert93: { x: xL93.toFixed(1), y: yL93.toFixed(1) },
   };
