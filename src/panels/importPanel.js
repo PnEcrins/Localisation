@@ -1,6 +1,10 @@
 import L from "../leafletGlobals.js";
 import { getInfoFromGeom } from "./infoPanel.js";
 
+
+L.Control.FileLayerLoad.LABEL = "🖿";
+L.Control.FileLayerLoad.TITLE = "Importer un fichier (GPX, GeoJSON, KML)";
+
 export function setupImportPanel(map, layerControl) {
   const control = L.Control.fileLayerLoad({
     position: "topleft",
