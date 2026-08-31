@@ -1,0 +1,197 @@
+:root {
+  --pne-purple: #6a2b7a;
+  --border: #d8d8d8;
+  --bg: #fafafa;
+  --text: #222;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+}
+
+#app-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding: 0 16px;
+  background: var(--pne-purple);
+  color: white;
+}
+
+#app-header h1 {
+  font-size: 1.05rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+#app-logo {
+  height: 36px;
+  border-radius: 4px;
+}
+
+#app {
+  display: flex;
+  height: calc(100% - 56px);
+}
+
+#sidebar {
+  width: 320px;
+  min-width: 320px;
+  background: var(--bg);
+  border-right: 1px solid var(--border);
+  padding: 14px;
+  overflow-y: auto;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0 0 10px;
+}
+
+#map-container {
+  flex: 1;
+  position: relative;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+#info-content ul {
+  margin: 4px 0;
+  padding-left: 18px;
+  font-size: 0.85rem;
+}
+
+#info-content .coords-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin-top: 6px;
+}
+
+#info-content .coords-table td {
+  border-bottom: 1px solid var(--border);
+  padding: 3px 2px;
+}
+
+#info-content .coords-table td:first-child {
+  color: #666;
+  width: 45%;
+}
+
+#info-content .altitude,
+#info-content .commune {
+  font-size: 0.9rem;
+  margin: 4px 0;
+}
+
+#info-content .loading {
+  color: #888;
+  font-style: italic;
+}
+
+.search-control {
+  background: white;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.search-control select {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.leaflet-control-gps a {
+  width: auto;
+  padding: 0 8px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal-box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.modal-box h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+}
+
+.modal-box label {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.modal-box input {
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.modal-error {
+  color: #c0392b;
+  font-size: 0.8rem;
+  margin: 0;
+  min-height: 1em;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.modal-actions button {
+  padding: 8px 14px;
+  border: 1px solid var(--pne-purple);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  background: var(--pne-purple);
+  color: white;
+}
+
+.modal-actions button.secondary {
+  background: white;
+  color: var(--pne-purple);
+}
