@@ -68,6 +68,34 @@ body {
   height: 100%;
 }
 
+.side-bar-title{
+  margin-top: 0px;
+}
+
+/* Écrans étroits (tablette/téléphone sur le terrain) : la carte passe en
+   premier (priorité à l'espace), le bandeau d'infos en dessous, sur toute
+   la largeur, avec une hauteur plafonnée et son propre scroll. */
+@media (max-width: 700px) {
+  #app {
+    flex-direction: column;
+  }
+
+  #map-container {
+    order: 1;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  #sidebar {
+    order: 2;
+    width: 100%;
+    min-width: 0;
+    max-height: 30vh;
+    border-right: none;
+    border-top: 1px solid var(--border);
+  }
+}
+
 #info-content ul {
   margin: 4px 0;
   padding-left: 18px;
