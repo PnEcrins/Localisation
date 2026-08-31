@@ -10,6 +10,7 @@ function utmZoneFromLon(lon) {
 }
 
 
+
 /**
  * lngLat: [lon, lat] en degrés décimaux (WGS84 / EPSG:4326)
  * Retourne toutes les représentations utiles pour l'agent sur le terrain.
@@ -22,7 +23,6 @@ export function describeCoordinates([lon, lat]) {
 
   return {
     wgs84: { x: lon.toFixed(6), y: lat.toFixed(6) },
-    utm: { zone, x: xUtm.toFixed(1), y: yUtm.toFixed(1) },
     lambert93: { x: xL93.toFixed(1), y: yL93.toFixed(1) },
   };
 }
