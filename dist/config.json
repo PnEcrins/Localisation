@@ -1,0 +1,86 @@
+{
+  "apiBaseUrl": "https://geonature.ecrins-parcnational.fr/api/geo",
+
+  "map": {
+    "center": [6.2, 44.9],
+    "zoom": 10,
+    "maxZoom": 19
+  },
+
+  "areaTypes": {
+    "communes": { "idType": 25, "codeDepartementsPrefix": ["05", "38"] },
+    "secteurs": { "idType": 30 },
+    "excludedZonageTypeCodes": [
+      "COM", "DEP", "REG", "SEC", "MAS", "ZBIOG", "M10", "M5", "M1",
+      "UG", "PEC", "AA", "PAF", "SOPHIE", "TPN",
+      "ALPAGES_ZP", "ALPAGES_UP", "ALPAGES_ZH"
+    ]
+  },
+
+  "layers": [
+    {
+      "id": "ign-plan",
+      "label": "Plan IGN",
+      "type": "wmts",
+      "baseLayer": true,
+      "url": "https://data.geopf.fr/wmts",
+      "layer": "GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2",
+      "style": "normal",
+      "tileMatrixSet": "PM",
+      "format": "image/png",
+      "attribution": "IGN-F/Geoportail",
+      "visible": true
+    },
+    {
+      "id": "ign-ortho",
+      "label": "Photographies aériennes",
+      "type": "wmts",
+      "baseLayer": true,
+      "url": "https://data.geopf.fr/wmts",
+      "layer": "ORTHOIMAGERY.ORTHOPHOTOS",
+      "style": "normal",
+      "tileMatrixSet": "PM",
+      "format": "image/jpeg",
+      "attribution": "IGN-F/Geoportail",
+    },
+    {
+      "id": "ign-cadastre",
+      "label": "Cadastre",
+      "type": "wmts",
+      "baseLayer": false,
+      "url": "https://data.geopf.fr/wmts",
+      "layer": "CADASTRALPARCELS.PARCELLAIRE_EXPRESS",
+      "style": "normal",
+      "tileMatrixSet": "PM",
+      "format": "image/png",
+      "attribution": "IGN-F/Geoportail (DGFiP)",
+      "enabled": false
+    },
+    {
+      "id": "coeur_pne",
+      "label": "Zone coueur PNE",
+      "type": "geojson",
+      "enabled": false,
+      "url": "https://geonature.ecrins-parcnational.fr/api/geo/areas?type_code=ZC&format=geojson&limit=2000",
+      "transparent": true,
+    },
+    {
+      "id": "secteurs",
+      "label": "Secteurs",
+      "type": "geojson",
+      "enabled": false,
+      "url": "https://geonature.ecrins-parcnational.fr/api/geo/areas?type_code=SEC&format=geojson&limit=2000",
+      "transparent": true
+    },
+    {
+      "id": "exemple-wms",
+      "label": "Exemple couche WMS (a adapter ou supprimer)",
+      "type": "wms",
+      "enabled": false,
+      "url": "https://georeferencement.ecrins-parcnational.fr/geoserver/wms",
+      "layers": "nom_espace:nom_couche",
+      "format": "image/png",
+      "transparent": true
+    },
+
+}
