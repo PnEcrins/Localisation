@@ -21,8 +21,17 @@ async function main() {
 
   const { map, layerControl } = createMap(config);
 
-  const types = await getAreaTypes();
-  const typesById = new Map(types.map((t) => [t.id_type, t]));
+  // Non bloquant : ne sert qu'à afficher un libellé lisible pour chaque
+  // zonage (sinon repli sur "Zonage" générique, voir infoPanel.js) et à
+  // filtrer les types techniques. Si l'API est indisponible, l'appli doit
+  // quand même se lancer plutôt que planter entièrement pour ça.
+  let typesById = new Map();
+  try {
+    const types = await getAreaTypes();
+    typesById = new Map(types.map((t) => [t.id_type, t]));
+  } catch (err) {
+    console.error("Impossible de charger les types de zonage :", err);
+  }
 
   initInfoPanel({
     communeIdType: config.areaTypes.communes.idType,
