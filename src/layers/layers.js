@@ -41,7 +41,7 @@ function buildWmsLayer(cfg) {
 
 function buildGeoJsonLayer(cfg) {
   const layer = L.geoJSON(null, {
-    style: { color: cfg.color || "#1d6fa5", weight: 2, fillOpacity: 0.25 },
+    style: { color: cfg.color || "#1d6fa5", weight: 2, fillOpacity: 0 },
     pointToLayer: (feature, latlng) =>
       L.circleMarker(latlng, { radius: 5, color: cfg.color || "#1d6fa5" }),
   });
