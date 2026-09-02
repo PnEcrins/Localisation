@@ -103,18 +103,28 @@
       "enabled": false
     },
     {
-      "id": "secteurs",
-      "label": "Secteurs",
+      "id": "AOA",
+      "label": "Aire d'adhésion",
       "type": "geojson",
-      "enabled": false,
-      "url": "https://geonature.ecrins-parcnational.fr/api/geo/areas?type_code=SEC&format=geojson&limit=2000"
+      "enabled": true,
+      "url": "https://geonature.ecrins-parcnational.fr/api/geo/areas?type_code=PEC&format=geojson&limit=2000",
+      "style": {
+        "color": "#000000",
+        "weight": 2,
+        "fillOpacity": 0
+      }
     },
     {
       "id": "coeur_pne",
-      "label": "Zone coueur PNE",
+      "label": "Cœur du PNE",
       "type": "geojson",
       "enabled": true,
-      "url": "https://geonature.ecrins-parcnational.fr/api/geo/areas?type_code=ZC&format=geojson&limit=2000"
+      "url": "https://geonature.ecrins-parcnational.fr/api/geo/areas?type_code=ZC&format=geojson&limit=2000",
+      "style": {
+        "color": "#a12ebe",
+        "weight": 4,
+        "fillOpacity": 0
+      }
     }
   ]
 }

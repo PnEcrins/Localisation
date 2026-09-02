@@ -7,6 +7,7 @@ import { setupSearchPanel } from "./panels/searchPanel.js";
 import { setupDrawPanel } from "./panels/drawPanel.js";
 import { setupImportPanel } from "./panels/importPanel.js";
 import { setupGpsPanel } from "./panels/gpsPanel.js";
+import { setupLegendPanel } from "./panels/legendPanel.js";
 
 function showFatalError(message) {
   document.body.insertAdjacentHTML(
@@ -42,6 +43,7 @@ async function main() {
   setupDrawPanel(map);
   setupImportPanel(map, layerControl);
   setupGpsPanel(map);
+  setupLegendPanel(map, config);
 }
 
 main().catch((err) => {
