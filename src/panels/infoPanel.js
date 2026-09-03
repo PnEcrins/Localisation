@@ -9,7 +9,7 @@ function escapeHtml(str) {
 
 function renderCoords(c) {
   return `<table class="coords-table">
-    <tr><td>WGS84 (degrés décimaux)</td><td>${c.wgs84.x}° / ${c.wgs84.y}°</td></tr>
+    <tr><td>WGS84 (degrés décimaux)</td><td>${c.wgs84.x}°E / ${c.wgs84.y}°N</td></tr>
     <tr><td>Lambert 93</td><td>${c.lambert93.x} m / ${c.lambert93.y} m</td></tr>
   </table>`;
 }
