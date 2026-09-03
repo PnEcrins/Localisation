@@ -80,6 +80,10 @@ body {
     flex-direction: column;
   }
 
+  .leaflet-control-legend, .search-control {
+    display: none!important;
+  }
+
   #map-container {
     order: 1;
     flex: 1 1 auto;
